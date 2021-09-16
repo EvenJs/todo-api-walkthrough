@@ -10,13 +10,13 @@ let id = 1;
 
 function addTask({ description }) {
   const task = { description, id: id++, done: false };
-  task.push(task);
+  tasks.push(task);
   return task;
 }
 
 function getAllTask({ description }) {
   if(description) {
-    const filtered = task.filter((i) => i.description.includes(description));
+    const filtered = tasks.filter((i) => i.description.includes(description));
     return filtered;
   }
   return tasks;
@@ -40,7 +40,7 @@ function updateTaskById(id, { done, description }) {
 
 function deleteTaskById(id) {
   const taskIndex = getTaskIndexById(id);
-  task.splice(taskIndex, 1);
+  tasks.splice(taskIndex, 1);
   // const deletedTask = tasks.splice(taskIndex, 1);
   // return deletedTask;
 }

@@ -13,7 +13,7 @@ const router = express.Router();
 
 router.get('', getAllTask);
 
-router.get('./:id', parseId, checkTaskExist, getTaskById);
+router.get('/:id', parseId, checkTaskExist, getTaskById);
 
 router.post('', addTask);
 
